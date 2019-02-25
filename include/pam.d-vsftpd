@@ -1,0 +1,2 @@
+auth required pam_pwdfile.so pwdfile /etc/ftp2http/users.passwd
+account required pam_permit.so
