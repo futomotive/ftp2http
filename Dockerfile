@@ -31,6 +31,9 @@ COPY include/admin /etc/ftp-users/admin
 COPY include/watch-users.sh /bin/watch-users.sh
 COPY include/entrypoint.sh /bin/entrypoint.sh
 
+RUN chmod +x /bin/watch-users.sh
+RUN chmod +x /bin/entrypoint.sh
+
 VOLUME ["/var/lib/ftp2http", "/etc/ftp2http"]
 
 EXPOSE 20 21 80 20200-20210
