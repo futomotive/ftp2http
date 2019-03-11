@@ -33,10 +33,10 @@ COPY include/entrypoint.sh /bin/entrypoint.sh
 
 RUN chmod +x /bin/*.sh
 
-VOLUME ["/var/lib/ftp2http", "/etc/ftp2http"]
+VOLUME ["/var/lib", "/etc/ftp2http"]
 
 EXPOSE 20 21 80 20200-20210
 
-RUN chown ftp2http:nogroup /var/lib/ftp2http
+RUN mkdir /var/lib/ftp2http && chown ftp2http:nogroup /var/lib/ftp2http
 
 CMD /bin/entrypoint.sh
